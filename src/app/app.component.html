@@ -1,0 +1,25 @@
+<!-- <div>
+  <h1> {{(users$|async)?.length}}Users </h1>
+  <ol>
+    <li *ngFor="let user of (users$ | async) ">
+      {{ user.name }}
+    </li>
+  </ol>
+</div> -->
+
+<div *ngIf="(users$|async) as users">
+  <h1> {{users?.length}}Users </h1>
+  <ol>
+    <li *ngFor="let user of users ">
+      {{ user.name }}
+    </li>
+  </ol>
+</div>
+
+<div>
+  <h2>Error Demo</h2>
+  <button id="id1">Get 401</button>
+  <button id="id2">Get 403</button>
+  <button id="id3">Get 404</button>
+  <button id="id4">Get 503</button>
+</div>
